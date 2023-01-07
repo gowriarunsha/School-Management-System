@@ -465,6 +465,17 @@ myApp.post("/modifyStudentDetails",isTeacherLoggedIn,(req,res) =>
     });
 })
 
+
+myApp.get("/calendar",isTeacherLoggedIn,(req,res) =>
+{
+    let pageTitle = "Academic Calendar"
+    let userName = req.user.tName; 
+    res.render("calendar",{pageTitle : pageTitle, userName : userName})
+})
+
+//CHANGECHANGE add calendar for student logiv
+
+
 myApp.post("/batchAddStudents",isTeacherLoggedIn,(req,res) =>
 {
     let csvDataInput = req.body.csvData;
