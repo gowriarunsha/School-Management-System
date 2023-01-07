@@ -1,0 +1,49 @@
+<%- include("header") %>
+<div class="container-fluid main-div">
+        <div class="std-info">
+            <table class="table-student">
+            <!-- <table class="table table-dark table-striped"> -->
+                <tr>
+                    <td class="user-img" colspan="2">
+                        <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="user" style="border-collapse:collapse; border-radius:100%; width:100px;">
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td class="std-label">Name</td>
+                    <td><%=userName%></td>
+                </tr>
+                <tr>
+                    <td class="std-label">Reg No</td>
+                    <td><%=studentID%></td>
+                </tr>
+                <tr>
+                    <td class="std-label">Mail ID</td>
+                    <td><%=emailID%></td>
+                </tr>
+                <tr>
+                    <td class="std-label">Address</td>
+                    <td><address>
+                        <%= studentAddress %>
+                    </address></td>
+                </tr>
+            </table>
+        </div>
+        <div class="cards-div">
+            <div class="row row-cards">
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">View Attendance</h5>
+                            <a href="/viewAttendance" class="btn btn-primary mt-5">View Attendance</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+</div>
+
+<footer>
+    <%- include("footer") %>
+</footer>
