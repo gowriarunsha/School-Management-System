@@ -1,0 +1,39 @@
+<%- include("header") %>
+<div class="container-fluid">
+    <div class="centerAlign">
+        <h1>Request Form</h1>
+        <form action="https://formsubmit.co/gowri.trv19it029@gecbh.ac.in" method="post">
+
+            <br>
+            <label for="name" name="name">Full Name:</label>
+            <input type="text" id="name" name="name" value="<%= userName %>"><br><br>
+            <label for="id">Student ID:</label>
+            <input type="text" id="id" name="id" value="<%= studentID %>"><br><br>
+            <label for="email">Email Address:</label>
+            <input type="text" id="email" name="email" value="<%= emailID %>"><br><br>
+
+
+            <label class="mt-3 ml-3" for="schol">Did you apply for any other scholarship?</label>
+            <br>
+            <input type="radio" id="Yes" name="otherscholar" value="Yes">
+            <label for="Yes">Yes</label>
+            <input type="radio" id="No" name="otherscholar" value="No">
+            <label for="No">No</label>
+            <br>
+
+            <label class="mt-3 ml-3" for="schol">Is your income less than one lakh?</label>
+            <br>
+            <input type="radio" id="Yes" name="income" value="Yes">
+            <label for="Yes">Yes</label>
+            <input type="radio" id="No" name="income" value="No">
+            <label for="No">No</label>
+
+            
+
+            <br>
+            <input type="submit" value="Submit" class="btn btn-success mt-3">
+            <a class="btn btn-danger mt-3" href="studentLanding">Cancel</a>
+        </form>
+    </div>
+</div>
+<%- include("footer") %>

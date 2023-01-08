@@ -213,6 +213,17 @@ myApp.get("/facultyEvaluation",isStudentLoggedIn,(req,res) =>
     //res.render("facultyEvaluation",{pageTitle : pageTitle,userName : userName, studentID : studentID,emailID : emailID, studentAddress : studentAddress, CL : CL})
 })
 
+myApp.get("/scholarship",isStudentLoggedIn,(req,res) =>
+{
+    let pageTitle = "Apply E-Grantz"
+    let userName = req.user.sName;
+    let studentID = req.user.sId;
+    let emailID = req.user.sEmail;
+    let studentAddress = req.user.sAddress;
+
+    res.render("scholarship",{pageTitle : pageTitle,userName : userName, studentID : studentID,emailID : emailID, studentAddress : studentAddress})
+})
+
 myApp.get("/logout",(req,res)=>
 {
     req.logout((err) =>
