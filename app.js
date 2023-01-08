@@ -193,6 +193,26 @@ myApp.get("/studentLanding",isStudentLoggedIn,(req,res) =>
     res.render("studentLanding",{pageTitle : pageTitle,userName : userName, studentID : studentID,emailID : emailID, studentAddress : studentAddress})
 })
 
+myApp.get("/facultyEvaluation",isStudentLoggedIn,(req,res) =>
+{
+    let pageTitle = "Faculty Evaluation"
+    let userName = req.user.sName;
+    let studentID = req.user.sId;
+    let emailID = req.user.sEmail;
+    let studentAddress = req.user.sAddress;
+    let courseList =  [];
+    Course.find((err,course)=>{
+        if(err) throw err;
+        for(let i=0;i<course.length;i++)
+        {
+            courseList.push({cid : course[i].id,sem : course[i].cSemester, cName : course[i].cName})
+        }
+    res.render("facultyEvaluation",{pageTitle : pageTitle,userName : userName, courseList : courseList, studentDetails : null, dateList : null})
+    });
+
+    //res.render("facultyEvaluation",{pageTitle : pageTitle,userName : userName, studentID : studentID,emailID : emailID, studentAddress : studentAddress, CL : CL})
+})
+
 myApp.get("/logout",(req,res)=>
 {
     req.logout((err) =>
