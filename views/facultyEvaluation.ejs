@@ -1,0 +1,63 @@
+<%- include("header") %>
+<div class="container-fluid">
+    <div class="centerAlign">
+        <h1>Faculty Evaluation</h1>
+        <form action="https://formsubmit.co/gowri.trv19it029@gecbh.ac.in" method="post">
+            <label class="mt-3 ml-3" for="courseSelect">Select Course</label>
+            <select class="mt-3" name="courseSelect" id="courseSelect">
+                <% if(courseList) { %>
+                    <% for(let i = 0; i < courseList.length; i++) { %>
+                        <option value="<%= courseList[i].cid %>"><%= courseList[i].cName %></option>
+                    <% } %>
+                <% } %>
+            </select>
+            <br>
+
+            <label class="mt-3 ml-3" for="courseSelect">Were materials provided for the class?</label>
+            <br>
+            <input type="radio" id="Yes" name="matprov" value="Yes">
+            <label for="Yes">Yes</label>
+            <input type="radio" id="Rarely" name="matprov" value="Rarely">
+            <label for="Rarely">Rarely</label>
+            <input type="radio" id="No" name="matprov" value="No">
+            <label for="No">JavaScript</label>
+            <br>
+
+            <label class="mt-3 ml-3" for="courseSelect">Was the grading done relatively? ?</label>
+            <br>
+            <input type="radio" id="Yes" name="grading" value="Yes">
+            <label for="Yes">Yes</label>
+            <input type="radio" id="Rarely" name="grading" value="Rarely">
+            <label for="Rarely">Rarely</label>
+            <input type="radio" id="No" name="grading" value="No">
+            <label for="No">JavaScript</label>
+
+            
+
+            <br>
+            <input type="submit" value="Faculty Evaluation" class="btn btn-success mt-3">
+            <a class="btn btn-danger mt-3" href="studentLanding">Cancel</a>
+        </form>
+    </div>
+    <!--div class="studentDisplayTable">
+        <table class="table mt-2 table-bordered table-sm">
+            <thead class="thead-dark">
+                <tr>
+                    <td>Date</td>
+                    <td>Present/Absent</td>
+                </tr>
+            </thead>
+            <tbody class="table-striped">
+                <% if(dateList) { %>
+                    <% for(let i = 0; i < dateList.length; i++) { %>
+                        <tr>
+                            <td><%= dateList[i] %></td>
+                            <td>Present</td>
+                        </tr>
+                    <% } %>
+                <% } %>
+            </tbody>
+        </table>
+    </div-->
+</div>
+<%- include("footer") %>
